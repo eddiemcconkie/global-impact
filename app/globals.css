@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 
-@theme {
+@theme inline {
 	--color-*: initial;
 	--color-primary-100: #e8f2fc;
 	--color-primary-200: #add4f7;
@@ -24,6 +24,7 @@
 	--shadow-menu:
 		0 -3px 8px #2e3e4808, 0 -14px 14px #2e3e4808, 0 -31px 18px #2e3e4805;
 
+	--font-mono: var(--font-ocra);
 	/* --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono); */
 }

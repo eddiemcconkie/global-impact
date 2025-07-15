@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Ally Bank",
+    "id": "ally-bank",
+    "cardNumber": "•••• •••• •••• 1111",
+    "cardExpiration": "12/26",
+    "brandColor": "#50276B"
+  },
+  {
+    "name": "American Express",
+    "id": "american-express",
+    "cardNumber": "•••• •••• •••• 4312",
+    "cardExpiration": "03/27",
+    "brandColor": "#2E77BC"
+  },
+  {
+    "name": "Bank of America",
+    "id": "bank-of-america",
+    "cardNumber": "•••• •••• •••• 9424",
+    "cardExpiration": "07/26",
+    "brandColor": "#012169"
+  },
+  {
+    "name": "Capital One",
+    "id": "capital-one",
+    "cardNumber": "•••• •••• •••• 9010",
+    "cardExpiration": "09/25",
+    "brandColor": "#004977"
+  },
+  {
+    "name": "Chase",
+    "id": "chase",
+    "cardNumber": "•••• •••• •••• 4242",
+    "cardExpiration": "11/26",
+    "brandColor": "#007DBA"
+  },
+  {
+    "name": "Citibank",
+    "id": "citibank",
+    "cardNumber": "•••• •••• •••• 5100",
+    "cardExpiration": "01/28",
+    "brandColor": "#1A4798"
+  },
+  {
+    "name": "Discover Bank",
+    "id": "discover-bank",
+    "cardNumber": "•••• •••• •••• 1117",
+    "cardExpiration": "06/27",
+    "brandColor": "#FF6000"
+  },
+  {
+    "name": "MACU",
+    "id": "mountain-america",
+    "cardNumber": "•••• •••• •••• 0000",
+    "cardExpiration": "08/25",
+    "brandColor": "#990000"
+  },
+  {
+    "name": "U.S. Bank",
+    "id": "us-bank",
+    "cardNumber": "•••• •••• •••• 0007",
+    "cardExpiration": "04/26",
+    "brandColor": "#D62718"
+  },
+  {
+    "name": "Wells Fargo",
+    "id": "wells-fargo",
+    "cardNumber": "•••• •••• •••• 6677",
+    "cardExpiration": "10/27",
+    "brandColor": "#C40404"
+  }
+]

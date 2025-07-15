@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Starbucks",
+    "amount": -4.75,
+    "timestamp": "2025-07-13T09:24:15Z"
+  },
+  {
+    "name": "Amazon Purchase",
+    "amount": -32.99,
+    "timestamp": "2025-07-12T18:10:45Z"
+  },
+  {
+    "name": "Direct Deposit - ACME Corp",
+    "amount": 2500.00,
+    "timestamp": "2025-07-12T00:01:00Z"
+  },
+  {
+    "name": "Uber Ride",
+    "amount": -18.20,
+    "timestamp": "2025-07-11T22:33:12Z"
+  },
+  {
+    "name": "Whole Foods Market",
+    "amount": -96.45,
+    "timestamp": "2025-07-11T16:12:03Z"
+  },
+  {
+    "name": "Spotify Subscription",
+    "amount": -9.99,
+    "timestamp": "2025-07-10T03:00:00Z"
+  },
+  {
+    "name": "Transfer from Savings",
+    "amount": 500.00,
+    "timestamp": "2025-07-09T14:45:00Z"
+  },
+  {
+    "name": "Venmo Payment from John",
+    "amount": 42.00,
+    "timestamp": "2025-07-09T08:23:17Z"
+  },
+  {
+    "name": "Netflix",
+    "amount": -15.49,
+    "timestamp": "2025-07-08T02:00:00Z"
+  },
+  {
+    "name": "Gas Station",
+    "amount": -54.30,
+    "timestamp": "2025-07-07T19:05:36Z"
+  }
+]

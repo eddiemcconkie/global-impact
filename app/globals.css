@@ -1,26 +1,37 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+	--color-*: initial;
+	--color-primary-100: #e8f2fc;
+	--color-primary-200: #add4f7;
+	--color-primary-400: #3e8ab8;
+	--color-primary-500: #2b6587;
+	--color-primary-600: #1a425a;
+	--color-primary-700: #0a2130;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+	--color-secondary-100: #e8e9ea;
+	--color-secondary-200: #bfc1c4;
+	--color-secondary-300: #989a9f;
+	--color-secondary-400: #313234;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+	--color-danger-100: #ffcacd;
+	--color-danger-400: #cd0031;
+	--color-danger-500: #b31e30;
+
+	--color-background: #f5f5f5;
+	--color-white: #ffffff;
+
+	--shadow-menu:
+		0 -3px 8px #2e3e4808, 0 -14px 14px #2e3e4808, 0 -31px 18px #2e3e4805;
+
+	/* --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono); */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+hr {
+	@apply border-secondary-100 w-full border-t-1;
 }

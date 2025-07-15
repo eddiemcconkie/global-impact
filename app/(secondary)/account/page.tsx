@@ -1,13 +1,14 @@
 import { Button } from '@/components/button';
 import { Card } from '@/components/card';
 import { DrillDownHeader } from '@/components/drill-down-header';
-import { myAccounts } from '@/data/data';
+import { getMyAccounts } from '@/data/redis';
 import { ArrowRight, Plus } from 'lucide-react';
 
 import Link from 'next/link';
 
-export default function AccountPage() {
-	console.log(myAccounts);
+export default async function AccountPage() {
+	const myAccounts = await getMyAccounts();
+
 	return (
 		<>
 			<DrillDownHeader backlink="/wallet" />

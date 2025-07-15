@@ -1,6 +1,16 @@
 import { Account } from '@/data/data';
+import { getMyAccounts, setMyAccounts } from '@/data/redis';
 import { Trash2 } from 'lucide-react';
+import { redirect } from 'next/navigation';
 import { Button } from './button';
+
+async function removeAccount(formData: FormData) {
+	'use server';
+	const accountId = formData.get('accountId');
+	const myAccounts = await getMyAccounts();
+	await setMyAccounts(myAccounts.filter((a) => a.id !== accountId));
+	redirect('/account');
+}
 
 export function AccountDetails({ account }: { account: Account }) {
 	return (
@@ -23,13 +33,14 @@ export function AccountDetails({ account }: { account: Account }) {
 					<img src="/visa.svg" alt="" />
 				</div>
 			</div>
-			<div className="self-center">
-				<Button color="danger" variant="outline">
+			<form action={removeAccount} className="self-center">
+				<input type="hidden" name="accountId" value={account.id} />
+				<Button color="danger" variant="outline" type="submit">
 					<span className="flex items-center gap-2 px-4">
 						<Trash2 /> Remove Card
 					</span>
 				</Button>
-			</div>
+			</form>
 		</>
 	);
 }

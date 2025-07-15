@@ -1,25 +1,30 @@
-import { Button } from '@/components/button';
-import { Card } from '@/components/card';
-import { DrillDownHeader } from '@/components/drill-down-header';
-import { accounts, myAccounts } from '@/data/data';
-import { Plus } from 'lucide-react';
-import { redirect } from 'next/navigation';
+'use server';
 
-async function addAccountAction(formData: FormData) {
-	'use server';
+import { DrillDownHeader } from '@/components/drill-down-header';
+import { accounts } from '@/data/data';
+import { getMyAccounts, setMyAccounts } from '@/data/redis';
+import { AddAccountForm } from './add-account-form';
+
+type AddAccountActionState = { status?: 'success' | 'error' };
+export async function addAccountAction(
+	prevState: AddAccountActionState,
+	formData: FormData,
+): Promise<AddAccountActionState> {
 	const accountId = formData.get('accountId');
 	const account = accounts.find((a) => a.id === accountId);
+	const myAccounts = await getMyAccounts();
 	const exists = myAccounts.findIndex((a) => a.id === accountId) >= 0;
 
-	if (account && !exists) {
+	if (account && !exists && account.id !== 'discover-bank') {
 		myAccounts.push(account);
-		console.log('Adding account');
-		console.log(myAccounts);
-		redirect('/account');
+		await setMyAccounts(myAccounts);
+		return { status: 'success' };
 	}
+	return { status: 'error' };
 }
 
-export default function AddAccountPage() {
+export default async function AddAccountPage() {
+	const myAccounts = await getMyAccounts();
 	const accountOptions = accounts.filter(
 		(account) => myAccounts.findIndex((my) => my.id === account.id) === -1,
 	);
@@ -27,29 +32,7 @@ export default function AddAccountPage() {
 	return (
 		<>
 			<DrillDownHeader backlink="/account" pageName="Add Account" />
-			{/* <AddAccount /> */}
-			<form action={addAccountAction} className="contents">
-				<Card>
-					<label className="flex flex-col gap-2.5">
-						<span className="text-primary-600 text-sm font-bold">
-							Select Bank
-						</span>
-						<select
-							name="accountId"
-							className="border-secondary-100 rounded-lg border-1 p-2"
-						>
-							{accountOptions.map((opt) => (
-								<option key={opt.id} value={opt.id}>
-									{opt.name}
-								</option>
-							))}
-						</select>
-					</label>
-				</Card>
-				<Button type="submit">
-					<Plus /> Add
-				</Button>
-			</form>
+			<AddAccountForm accountOptions={accountOptions} />
 		</>
 	);
 }

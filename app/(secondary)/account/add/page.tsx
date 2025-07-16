@@ -1,27 +1,7 @@
-'use server';
-
 import { PageHeader } from '@/components/page-header';
 import { accounts } from '@/data/data';
-import { getMyAccounts, setMyAccounts } from '@/data/redis';
+import { getMyAccounts } from '@/data/redis';
 import { AddAccountForm } from './add-account-form';
-
-type AddAccountActionState = { status?: 'success' | 'error' };
-export async function addAccountAction(
-	prevState: AddAccountActionState,
-	formData: FormData,
-): Promise<AddAccountActionState> {
-	const accountId = formData.get('accountId');
-	const account = accounts.find((a) => a.id === accountId);
-	const myAccounts = await getMyAccounts();
-	const exists = myAccounts.findIndex((a) => a.id === accountId) >= 0;
-
-	if (account && !exists && account.id !== 'discover-bank') {
-		myAccounts.push(account);
-		await setMyAccounts(myAccounts);
-		return { status: 'success' };
-	}
-	return { status: 'error' };
-}
 
 export default async function AddAccountPage() {
 	const myAccounts = await getMyAccounts();

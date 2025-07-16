@@ -1,11 +1,11 @@
 'use client';
 
+import { addAccountAction } from '@/actions/add-account';
 import { Button } from '@/components/button';
 import { Card } from '@/components/card';
 import { Account } from '@/data/data';
 import { Home, Plus } from 'lucide-react';
 import { useActionState } from 'react';
-import { addAccountAction } from './page';
 
 export function AddAccountForm({
 	accountOptions,

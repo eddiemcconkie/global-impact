@@ -1,6 +1,6 @@
 'use server';
 
-import { DrillDownHeader } from '@/components/drill-down-header';
+import { PageHeader } from '@/components/page-header';
 import { accounts } from '@/data/data';
 import { getMyAccounts, setMyAccounts } from '@/data/redis';
 import { AddAccountForm } from './add-account-form';
@@ -31,7 +31,7 @@ export default async function AddAccountPage() {
 
 	return (
 		<>
-			<DrillDownHeader backlink="/account" pageName="Add Account" />
+			<PageHeader backlink="/account" pageName="Add Account" />
 			<AddAccountForm accountOptions={accountOptions} />
 		</>
 	);

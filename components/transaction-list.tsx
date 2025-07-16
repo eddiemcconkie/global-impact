@@ -14,12 +14,12 @@ export function TransactionList({
 				Recent Transactions
 			</p>
 			<ul>
-				{transactions.map((transaction, i, array) => (
+				{transactions.map((transaction, i) => (
 					<li
 						key={i}
 						className={clsx(
 							'border-secondary-100 flex items-center gap-3 py-2',
-							i !== array.length - 1 && 'border-b-1',
+							i > 0 && 'border-t-1',
 						)}
 					>
 						<div
@@ -34,7 +34,7 @@ export function TransactionList({
 						</div>
 
 						<div>
-							<div className="text-secondary-400 text-sm font-medium">
+							<div className="text-secondary-500 text-sm font-medium">
 								{transaction.name}
 							</div>
 							<div className="text-secondary-300 text-xs">

@@ -23,7 +23,7 @@ export function AddAccountForm({
 					className="size-40"
 				/>
 				<p className="text-primary-600 text-2xl font-bold">Success</p>
-				<p className="text-secondary-400 text-center text-lg">
+				<p className="text-secondary-500 text-center text-lg">
 					You have added a bank account. It may take a few minutes to complete
 					the process. Once the process is complete you will see you linked bank
 					account within you wallet in this app. You can access your wallet by
@@ -36,7 +36,7 @@ export function AddAccountForm({
 		</Card>
 	) : state.status === 'error' ? (
 		<Card evenPadding>
-			<div className="text-secondary-400 flex flex-col items-center gap-2 text-center text-lg">
+			<div className="text-secondary-500 flex flex-col items-center gap-2 text-center text-lg">
 				<img
 					src="/graphics/add-account-failed.png"
 					alt=""

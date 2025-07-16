@@ -1,5 +1,5 @@
 import { AccountDetails } from '@/components/account-details';
-import { DrillDownHeader } from '@/components/drill-down-header';
+import { PageHeader } from '@/components/page-header';
 import { TabGroup } from '@/components/tab-group';
 import { TransactionList } from '@/components/transaction-list';
 import { accounts, transactions } from '@/data/data';
@@ -17,7 +17,7 @@ export default async function AccountDetailsPage({
 
 	return (
 		<>
-			<DrillDownHeader backlink="/account" />
+			<PageHeader backlink="/account" />
 
 			<TabGroup
 				tabs={[

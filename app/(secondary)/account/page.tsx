@@ -1,6 +1,6 @@
 import { Button } from '@/components/button';
 import { Card } from '@/components/card';
-import { DrillDownHeader } from '@/components/drill-down-header';
+import { PageHeader } from '@/components/page-header';
 import { getMyAccounts } from '@/data/redis';
 import { ArrowRight, Plus } from 'lucide-react';
 
@@ -11,7 +11,7 @@ export default async function AccountPage() {
 
 	return (
 		<>
-			<DrillDownHeader backlink="/wallet" />
+			<PageHeader backlink="/wallet" />
 			<Card>
 				<p className="text-secondary-300 text-sm font-medium">Bank Accounts</p>
 
@@ -28,7 +28,7 @@ export default async function AccountPage() {
 										alt=""
 										className="h-9 w-10 rounded-sm object-contain"
 									/>
-									<span className="text-secondary-400 text-sm font-medium">
+									<span className="text-secondary-500 text-sm font-medium">
 										{account.name} –{' '}
 										{account.cardNumber.slice(account.cardNumber.length - 4)}
 									</span>

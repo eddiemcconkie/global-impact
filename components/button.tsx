@@ -28,7 +28,7 @@ export function Button({
 		color === 'primary' &&
 			'[--color:var(--color-primary-400)] hover:not-disabled:[--color:var(--color-primary-500)] active:not-disabled:[--color:var(--color-primary-500)] disabled:opacity-50',
 		color === 'secondary' &&
-			'[--color:var(--color-secondary-300)] hover:not-disabled:[--color:var(--color-secondary-400)] active:not-disabled:[--color:var(--color-secondary-400)] disabled:opacity-50',
+			'[--color:var(--color-secondary-300)] hover:not-disabled:[--color:var(--color-secondary-500)] active:not-disabled:[--color:var(--color-secondary-500)] disabled:opacity-50',
 		color === 'danger' &&
 			'[--color:var(--color-danger-400)] hover:not-disabled:[--color:var(--color-danger-500)] active:not-disabled:[--color:var(--color-danger-500)] disabled:opacity-50',
 
